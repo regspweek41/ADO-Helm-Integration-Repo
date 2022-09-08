@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: middleware
-        image: mainproject.azurecr.io/aks/backend:#{buildNo}#
+        image: 7pmcontainerregistry.azurecr.io/aks/middleware:#{buildNo}#
         ports:
         - containerPort: 8080
