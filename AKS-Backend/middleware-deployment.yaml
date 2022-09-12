@@ -17,6 +17,34 @@ spec:
       containers:
       - name: middleware
         image: 7pmcontainerregistry.azurecr.io/aks/middleware:#{buildNo}#
+        env:
+        - name: api_env
+          value: #{api_env}#
+        - name: RDS_HOSTNAME
+          valueFrom:
+            secretKeyRef:
+              name: dbdetails
+              key: RDS_HOSTNAME
+        - name: RDS_PORT
+          valueFrom:
+            secretKeyRef:
+              name: dbdetails
+              key: RDS_PORT
+        - name: RDS_DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: dbdetails
+              key: RDS_DB_NAME
+        - name: RDS_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: dbdetails
+              key: RDS_USERNAME
+        - name: RDS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: dbdetails
+              key: RDS_PASSWORD
         ports:
         - containerPort: 8080
       imagePullSecrets:
