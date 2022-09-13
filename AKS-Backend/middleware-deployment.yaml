@@ -49,3 +49,17 @@ spec:
         - containerPort: 8080
       imagePullSecrets:
       - name: acr-secret
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: middleware-service
+spec:
+  selector:
+    app: middleware
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
