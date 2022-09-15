@@ -24,4 +24,14 @@ public class HelloWorldController {
 		//throw new RuntimeException("Something went wrong");
 		return new HelloWorldBean(String.format("Hello World, %s", name));
 	}
+
+	/**
+     * Health Check API at base path
+     * @return
+     */
+    @GetMapping()
+    public boolean healthCheck(){
+        return true;
+    }
+
 }
