@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: middleware
+  labels:
+    app: middleware
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      app: middleware
+  template:
+    metadata:
+      labels:
+        app: middleware
+    spec:
+      containers:
+      - name: middleware
+        image: 7amcontainerregistry.azurecr.io/docker/7ammiddleware:#{buildNo}#
+        ports:
+        - containerPort: 8080
