@@ -19,3 +19,5 @@ spec:
         image: 7amcontainerregistry.azurecr.io/docker/7ammiddleware:#{buildNo}#
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: acr-secret
