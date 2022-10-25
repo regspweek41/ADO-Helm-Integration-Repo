@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: middleware
+  lables:
+    app: middleware
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: middleware
+  template:
+    metadata:
+      labels:
+        app: middleware
+    spec:
+      containers:
+      - name: middleware
+        image: 
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "1"
+          limits:
+            memory: "4Gi"
+            cpu: "2"
+        env:
+        - name: api_env
+          value: "azure-uat"
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: 
