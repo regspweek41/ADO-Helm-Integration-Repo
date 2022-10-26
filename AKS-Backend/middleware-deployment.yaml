@@ -29,5 +29,3 @@ spec:
           value: "azure-uat"
         ports:
         - containerPort: 8080
-      imagePullSecrets:
-      - name: 
