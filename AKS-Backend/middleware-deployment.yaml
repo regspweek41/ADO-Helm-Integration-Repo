@@ -23,7 +23,7 @@ spec:
             cpu: "1"
           limits:
             memory: "4Gi"
-            cpu: "2"
+            cpu: "1"
         env:
         - name: api_env
           value: "azure-uat"
