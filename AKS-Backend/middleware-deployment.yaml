@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: middleware
-        image: containerregistry7pm.azurecr.io/backend/webapp:142
+        image: containerregistry7pm.azurecr.io/backend/webapp:146
         resources:
           requests:
             memory: "2Gi"
