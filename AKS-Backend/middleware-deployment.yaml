@@ -22,7 +22,7 @@ spec:
             memory: "2Gi"
             cpu: "1"
           limits:
-            memory: "4Gi"
+            memory: "3Gi"
             cpu: "1"
         env:
         - name: api_env
