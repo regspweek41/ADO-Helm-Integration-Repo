@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: 
   name: middleware
-  lables:
+  labels:
     app: middleware
 spec:
   replicas: 3
