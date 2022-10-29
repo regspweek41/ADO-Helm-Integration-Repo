@@ -43,7 +43,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: middleware
+    name: middleware-depl
   targetCPUUtilizationPercentage: 70 # target CPU utilization
 ---
 apiVersion: v1
