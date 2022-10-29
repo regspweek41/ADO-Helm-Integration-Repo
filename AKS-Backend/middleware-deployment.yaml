@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata: 
-  name: middleware
+  name: middleware-depl
   labels:
     app: middleware
 spec:
