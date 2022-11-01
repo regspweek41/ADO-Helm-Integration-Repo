@@ -6,6 +6,11 @@ metadata:
     app: middleware
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 1
   selector:
     matchLabels:
       app: middleware
@@ -13,11 +18,6 @@ spec:
     metadata:
       labels:
         app: middleware
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxUnavailable: 25%
-      maxSurge: 1
     spec:
       containers:
       - name: middleware
