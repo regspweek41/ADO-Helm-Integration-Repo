@@ -27,6 +27,11 @@ spec:
         env:
         - name: api_env
           value: "azure-uat"
+        - name: RDS_HOSTNAME
+          valueFrom:
+            secretkeyRef:
+              name: dbdetails
+              key: RDS_HOSTNAME
         ports:
         - containerPort: 8080
       imagePullSecrets:
