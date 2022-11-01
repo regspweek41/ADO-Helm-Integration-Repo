@@ -32,6 +32,26 @@ spec:
             secretkeyRef:
               name: dbdetails
               key: RDS_HOSTNAME
+        - name: RDS_PORT
+          valueFrom:
+            secretkeyRef:
+              name: dbdetails
+              key: RDS_PORT
+        - name: RDS_DB_NAME
+          valueFrom:
+            secretkeyRef:
+              name: dbdetails
+              key: RDS_DB_NAME
+        - name: RDS_USERNAME
+          valueFrom:
+            secretkeyRef:
+              name: dbdetails
+              key: RDS_USERNAME
+        - name: RDS_PASSWORD
+          valueFrom:
+            secretkeyRef:
+              name: dbdetails
+              key: RDS_PASSWORD
         ports:
         - containerPort: 8080
       imagePullSecrets:
