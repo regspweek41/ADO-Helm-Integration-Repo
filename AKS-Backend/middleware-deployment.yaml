@@ -34,22 +34,22 @@ spec:
               key: RDS_HOSTNAME
         - name: RDS_PORT
           valueFrom:
-            secretkeyRef:
+            secretKeyRef:
               name: dbdetails
               key: RDS_PORT
         - name: RDS_DB_NAME
           valueFrom:
-            secretkeyRef:
+            secretKeyRef:
               name: dbdetails
               key: RDS_DB_NAME
         - name: RDS_USERNAME
           valueFrom:
-            secretkeyRef:
+            secretKeyRef:
               name: dbdetails
               key: RDS_USERNAME
         - name: RDS_PASSWORD
           valueFrom:
-            secretkeyRef:
+            secretKeyRef:
               name: dbdetails
               key: RDS_PASSWORD
         ports:
