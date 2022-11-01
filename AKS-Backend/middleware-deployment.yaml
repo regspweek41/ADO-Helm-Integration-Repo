@@ -13,6 +13,11 @@ spec:
     metadata:
       labels:
         app: middleware
+  strategy:
+  type: RollingUpdate
+  rollingUpdate:
+     maxUnavailable: 25%
+     maxSurge: 1
     spec:
       containers:
       - name: middleware
@@ -54,6 +59,13 @@ spec:
               key: RDS_PASSWORD
         ports:
         - containerPort: 8080
+        readinessProbe:
+          httpGet:
+             path: /
+             port: 8080
+             initialDelaySeconds: 5
+             periodSeconds: 5
+             successThreshold: 1
       imagePullSecrets:
       - name: acr-secret
 
