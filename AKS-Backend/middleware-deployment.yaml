@@ -14,10 +14,10 @@ spec:
       labels:
         app: middleware
   strategy:
-  type: RollingUpdate
-  rollingUpdate:
-     maxUnavailable: 25%
-     maxSurge: 1
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 1
     spec:
       containers:
       - name: middleware
