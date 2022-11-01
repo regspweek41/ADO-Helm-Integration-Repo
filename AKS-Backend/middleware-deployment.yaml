@@ -29,7 +29,7 @@ spec:
           value: "azure-uat"
         - name: RDS_HOSTNAME
           valueFrom:
-            secretkeyRef:
+            secretKeyRef:
               name: dbdetails
               key: RDS_HOSTNAME
         - name: RDS_PORT
