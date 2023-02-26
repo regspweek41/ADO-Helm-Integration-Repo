@@ -13,11 +13,11 @@ pool:
 
 variables:
   dir-name: 'analyticsengine'
-  app-name: 'analytics-api'
+  app-name: 'middelware-api'
   vmImageName: 'ubuntu-latest'
   dockerRegistryServiceConnection: '1706e310-67d8-422e-8485-3e60dc535611'
   imageRepository: '$(app-end)/$(app-name)'
-  containerRegistry: 'ezrxcrnpd.azurecr.io'
+  containerRegistry: 'acr100th.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/build-Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
@@ -25,7 +25,7 @@ variables:
   ado-repo: 'eZRx-aks'
   ado-branch: development
   # App
-  app-end: 'ezrx-backend'
+  app-end: 'middleware-backend'
   value-file-dev: 'values_dev.yaml'
   value-file-qa: 'values_qa.yaml'
 
