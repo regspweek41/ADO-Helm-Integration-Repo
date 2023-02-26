@@ -18,7 +18,7 @@ variables:
   dockerRegistryServiceConnection: '1706e310-67d8-422e-8485-3e60dc535611'
   imageRepository: '$(app-end)/$(app-name)'
   containerRegistry: 'acr100th.azurecr.io'
-  dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/build-Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
   ado-project: 'eZRx Backend'
