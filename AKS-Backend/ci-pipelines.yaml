@@ -15,7 +15,6 @@ variables:
   dir-name: 'ProjectA-MiddlewareA'
   folder-name: 'AKS-Backend'
   app-name: 'middelware-api'
-  vmImageName: 'ubuntu-latest'
   dockerRegistryServiceConnection: '1e6918a0-6148-43f3-be28-f9074695428f'
   imageRepository: '$(app-end)/$(app-name)'
   containerRegistry: 'acr100th.azurecr.io'
