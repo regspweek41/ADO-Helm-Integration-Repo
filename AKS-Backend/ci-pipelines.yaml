@@ -9,7 +9,7 @@ trigger:
     - 'ProjectA-MiddlewareA/*'
 
 pool:
-  vmImage: '8pmbatch-vm'
+  name: 'Devops-Agent-8pmbatch'
 
 variables:
   dir-name: 'ProjectA-MiddlewareA'
