@@ -12,7 +12,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-  dir-name: 'analyticsengine'
+  dir-name: 'ProjectA-MiddlewareA'
   app-name: 'middelware-api'
   vmImageName: 'ubuntu-latest'
   dockerRegistryServiceConnection: '1706e310-67d8-422e-8485-3e60dc535611'
