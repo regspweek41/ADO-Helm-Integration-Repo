@@ -1,14 +1,12 @@
-name: 'ci-analytics-api'
+name: 'ProjectA-MiddlewareA'
 
 trigger:
   branches:
     include:
-    - aks-dev
+    - main
   paths:
     include:
-    - 'analyticsengine/*'
-    exclude:
-    - 'analyticsengine/pipeline-analytics-api.yaml'
+    - 'ProjectA-MiddlewareA/*'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -17,7 +15,7 @@ variables:
   dir-name: 'analyticsengine'
   app-name: 'analytics-api'
   vmImageName: 'ubuntu-latest'
-  dockerRegistryServiceConnection: 'cae0ca37-ae08-4048-bd3b-73203ec84efb'
+  dockerRegistryServiceConnection: '1706e310-67d8-422e-8485-3e60dc535611'
   imageRepository: '$(app-end)/$(app-name)'
   containerRegistry: 'ezrxcrnpd.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/build-Dockerfile'
