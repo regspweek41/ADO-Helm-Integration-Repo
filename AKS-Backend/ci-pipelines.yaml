@@ -77,6 +77,7 @@ stages:
         targetType: 'inline'
         script: |
           git checkout $(ado-branch)
+          git pull --all
           git config user.name "ADO Pipeline"
           sed -i '0,/^\([[:space:]]*tag: *\).*/s//\1$(tag)/;' helm-charts/$(app-end)/$(app-name)/$(value-file-dev)
           git commit -a -m 'Updated image tag to $(tag)'
