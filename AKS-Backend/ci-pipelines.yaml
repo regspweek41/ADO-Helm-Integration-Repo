@@ -38,7 +38,7 @@ stages:
     steps:
     - task: Maven@4
       inputs:
-        mavenPomFile: 'pom.xml'
+        mavenPomFile: '$(dir-name)/pom.xml'
         publishJUnitResults: false
         javaHomeOption: 'JDKVersion'
         mavenVersionOption: 'Default'
