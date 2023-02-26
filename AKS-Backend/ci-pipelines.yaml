@@ -9,7 +9,7 @@ trigger:
     - 'ProjectA-MiddlewareA/*'
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: '8pmbatch-vm'
 
 variables:
   dir-name: 'ProjectA-MiddlewareA'
