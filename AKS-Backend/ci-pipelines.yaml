@@ -1,0 +1,77 @@
+name: 'ci-analytics-api'
+
+trigger:
+  branches:
+    include:
+    - aks-dev
+  paths:
+    include:
+    - 'analyticsengine/*'
+    exclude:
+    - 'analyticsengine/pipeline-analytics-api.yaml'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  dir-name: 'analyticsengine'
+  app-name: 'analytics-api'
+  vmImageName: 'ubuntu-latest'
+  dockerRegistryServiceConnection: 'cae0ca37-ae08-4048-bd3b-73203ec84efb'
+  imageRepository: '$(app-end)/$(app-name)'
+  containerRegistry: 'ezrxcrnpd.azurecr.io'
+  dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/build-Dockerfile'
+  tag: 'dev-$(Build.SourceVersion)'
+  # Git envs
+  ado-project: 'eZRx Backend'
+  ado-repo: 'eZRx-aks'
+  ado-branch: development
+  # App
+  app-end: 'ezrx-backend'
+  value-file-dev: 'values_dev.yaml'
+  value-file-qa: 'values_qa.yaml'
+
+
+stages:
+- stage: Build_Docker_Image
+  displayName: Build and push docker image
+  jobs:
+  - job: Build
+    displayName: Build and push docker image
+    steps:
+    - task: Docker@2
+      displayName: Build the image 
+      inputs:
+        command: build
+        repository: $(imageRepository)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        dockerfile: $(dockerfilePath)
+        tags: |
+          $(tag)
+    - task: Docker@2
+      displayName: Push the image to container registry
+      inputs:
+        command: push
+        repository: $(imageRepository)
+        containerRegistry: $(dockerRegistryServiceConnection)
+        tags: |
+          $(tag)
+
+- stage: DEV_Update_Image_Tag_Helm_Chart
+  displayName: DEV - Update Helm chart with new image tag, Git update and push stage
+  jobs:
+  - job: Git_DEV
+    displayName: Git update and push
+    steps:
+    - checkout: git://$(ado-project)/$(ado-repo)@$(ado-branch)
+      persistCredentials: true
+    - task: Bash@3
+      displayName: DEV - Update values files with new image tag and push to the Git repo 
+      inputs:
+        targetType: 'inline'
+        script: |
+          git checkout $(ado-branch)
+          git config user.name "ADO Pipeline"
+          sed -i '0,/^\([[:space:]]*tag: *\).*/s//\1$(tag)/;' helm-charts/$(app-end)/$(app-name)/$(value-file-dev)
+          git commit -a -m 'Updated image tag to $(tag)'
+          git push -u origin $(ado-branch)
