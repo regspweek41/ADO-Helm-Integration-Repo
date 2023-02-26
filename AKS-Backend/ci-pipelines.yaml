@@ -15,7 +15,7 @@ variables:
   dir-name: 'ProjectA-MiddlewareA'
   app-name: 'middelware-api'
   vmImageName: 'ubuntu-latest'
-  dockerRegistryServiceConnection: '1706e310-67d8-422e-8485-3e60dc535611'
+  dockerRegistryServiceConnection: '1e6918a0-6148-43f3-be28-f9074695428f'
   imageRepository: '$(app-end)/$(app-name)'
   containerRegistry: 'acr100th.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
