@@ -23,7 +23,7 @@ variables:
   # Git envs
   ado-project: 'RVRIT'
   ado-repo: 'eZRx-aks'
-  ado-branch: development
+  ado-branch: main
   # App
   app-end: 'middleware-backend'
   value-file-dev: 'values_dev.yaml'
