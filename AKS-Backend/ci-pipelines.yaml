@@ -21,7 +21,7 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
-  ado-project: 'eZRx Backend'
+  ado-project: 'RVRIT'
   ado-repo: 'eZRx-aks'
   ado-branch: development
   # App
