@@ -24,7 +24,7 @@ variables:
   ado-repo: 'eZRx-aks'
   ado-branch: main
   # App
-  app-end: 'eZRx-backend'
+  app-end: 'ezrx-backend'
   value-file-dev: 'values_dev.yaml'
   value-file-qa: 'values_qa.yaml'
 
