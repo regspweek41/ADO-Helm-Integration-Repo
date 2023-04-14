@@ -9,14 +9,14 @@ trigger:
     - 'ProjectA-MiddlewareA/*'
 
 pool:
-  name: 'Devops-Agent-8pmbatch'
+  name: 'Devops-Agent-Pool'
 
 variables:
   dir-name: 'AKS-Backend'
   app-name: 'middelware-api'
-  dockerRegistryServiceConnection: '1e6918a0-6148-43f3-be28-f9074695428f'
+  dockerRegistryServiceConnection: 'cbc82315-2e2c-40f0-9fa4-555d5f051120'
   imageRepository: '$(app-end)/$(app-name)'
-  containerRegistry: 'acr100th.azurecr.io'
+  containerRegistry: 'acr100thbatchproject.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
