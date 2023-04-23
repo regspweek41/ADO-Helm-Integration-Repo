@@ -15,16 +15,16 @@ variables:
   dir-name: 'AKS-Backend'
   app-name: 'middelware-api'
   dockerRegistryServiceConnection: 'cbc82315-2e2c-40f0-9fa4-555d5f051120'
-  imageRepository: '$(app-end)/$(app-name)'
+  imageRepository: '$(app-name)'
   containerRegistry: 'acr100thbatchproject.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
   ado-project: 'RVRIT'
-  ado-repo: 'eZRx-aks'
+  ado-repo: 'Middeleware-ArgoCD'
   ado-branch: main
   # App
-  app-end: 'ezrx-backend'
+  app-end: 'ProjectA-BackendA'
   value-file-dev: 'values_dev.yaml'
   value-file-qa: 'values_qa.yaml'
 
@@ -79,6 +79,6 @@ stages:
           git checkout $(ado-branch)
           git pull --all
           git config user.name "ADO Pipeline"
-          sed -i '0,/^\([[:space:]]*tag: *\).*/s//\1$(tag)/;' helm-charts/$(app-end)/$(app-name)/$(value-file-dev)
+          sed -i '0,/^\([[:space:]]*tag: *\).*/s//\1$(tag)/;' helm-charts/$(app-name)/$(value-file-dev)
           git commit -a -m 'Updated image tag to $(tag)'
           git push -u origin $(ado-branch)
