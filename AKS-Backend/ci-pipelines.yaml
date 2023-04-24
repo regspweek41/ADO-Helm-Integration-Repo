@@ -14,9 +14,9 @@ pool:
 variables:
   dir-name: 'AKS-Backend'
   app-name: 'middelware-api'
-  dockerRegistryServiceConnection: 'cbc82315-2e2c-40f0-9fa4-555d5f051120'
+  dockerRegistryServiceConnection: '3e840d27-06c8-415f-b6dc-9437da54442f'
   imageRepository: '$(app-name)'
-  containerRegistry: 'acr100thbatchproject.azurecr.io'
+  containerRegistry: 'adoacr1000.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
