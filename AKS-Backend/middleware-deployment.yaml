@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: middleware
-        image: containerregistry7pm.azurecr.io/backend/webapp:#{buildNo}#
+        image: adoacr1000.azurecr.io/backend/webapp:#{buildNo}#
         env:
         - name: api_env
           value: "azure-uat"
