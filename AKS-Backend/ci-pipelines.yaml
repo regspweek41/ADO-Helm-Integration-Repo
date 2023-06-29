@@ -9,14 +9,14 @@ trigger:
     - 'ProjectA-MiddlewareA/*'
 
 pool:
-  name: 'Devops-Agent-Pool'
+  name: 'ado-201-pool'
 
 variables:
   dir-name: 'AKS-Backend'
   app-name: 'middelware-api'
-  dockerRegistryServiceConnection: '3e840d27-06c8-415f-b6dc-9437da54442f'
+  dockerRegistryServiceConnection: '9668d2b2-2021-4667-b776-92289773592d'
   imageRepository: '$(app-name)'
-  containerRegistry: 'adoacr1000.azurecr.io'
+  containerRegistry: 'acr201new.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/$(dir-name)/Dockerfile'
   tag: 'dev-$(Build.SourceVersion)'
   # Git envs
@@ -26,7 +26,6 @@ variables:
   # App
   app-end: 'ProjectA-BackendA'
   value-file-dev: 'values_dev.yaml'
-  value-file-qa: 'values_qa.yaml'
 
 
 stages:
