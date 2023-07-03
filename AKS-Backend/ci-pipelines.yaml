@@ -24,7 +24,6 @@ variables:
   ado-repo: 'Middeleware-ArgoCD'
   ado-branch: main
   # App
-  app-end: 'ProjectA-BackendA'
   value-file-dev: 'values_dev.yaml'
 
 
