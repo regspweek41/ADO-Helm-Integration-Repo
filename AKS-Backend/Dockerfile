@@ -1,4 +1,5 @@
 FROM openjdk:8-jdk-alpine
+MAINTAINER Dinesh
 VOLUME /tmp
 EXPOSE 8080
 ADD target/*.jar app.jar
